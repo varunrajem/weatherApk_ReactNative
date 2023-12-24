@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf",
+      "sha1": "caa86e5eee280d876dc54dc331df8ceaa4b9fa6f"
+    },
+    {
+      "path": "assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf",
+      "sha1": "0bc82dfdb6c913d99eedb88d55e5d61b33ecd210"
+    },
+    {
+      "path": "assets/fonts/Poppins-Bold.ttf",
+      "sha1": "875cf0cecd647bcf22e79d633d868c1b1ec98dfa"
+    },
+    {
+      "path": "assets/fonts/Poppins-Light.ttf",
+      "sha1": "e247a92158e112f8bf7b638c8d95381d66b00dbb"
+    },
+    {
+      "path": "assets/fonts/Poppins-Medium.ttf",
+      "sha1": "283f21b44efbdbf276ba802be2d949a36bbc4233"
+    }
+  ]
+}

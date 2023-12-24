@@ -14,6 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-WeatherApk-WeatherApkTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WeatherApk-WeatherApkTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D74C14F726204E8EBE92FD86 /* NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9641FAE7922348DD82B6F01E /* NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf */; };
+		61EB67CE64674DA5B1BCEAF6 /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A1792889BD2C43D7B75430AA /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf */; };
+		EA3276B5069047A4930CE7B5 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0575DFA07EB40FD99F5AD42 /* Poppins-Bold.ttf */; };
+		CD5BE15D311147D9A3A78F78 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 37E6600E37724EE48EB63AE8 /* Poppins-Light.ttf */; };
+		E07F898EB0494104A6D5E273 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 041B9671448B45B9A351458C /* Poppins-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +49,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WeatherApk/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-WeatherApk-WeatherApkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApk-WeatherApkTests.release.xcconfig"; path = "Target Support Files/Pods-WeatherApk-WeatherApkTests/Pods-WeatherApk-WeatherApkTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		9641FAE7922348DD82B6F01E /* NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf */ = {isa = PBXFileReference; name = "NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf"; path = "../assets/fonts/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A1792889BD2C43D7B75430AA /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf */ = {isa = PBXFileReference; name = "NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf"; path = "../assets/fonts/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C0575DFA07EB40FD99F5AD42 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; name = "Poppins-Bold.ttf"; path = "../assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		37E6600E37724EE48EB63AE8 /* Poppins-Light.ttf */ = {isa = PBXFileReference; name = "Poppins-Light.ttf"; path = "../assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		041B9671448B45B9A351458C /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				56C87F1C2A514AA186DF8C81 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +158,19 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		56C87F1C2A514AA186DF8C81 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				9641FAE7922348DD82B6F01E /* NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf */,
+				A1792889BD2C43D7B75430AA /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf */,
+				C0575DFA07EB40FD99F5AD42 /* Poppins-Bold.ttf */,
+				37E6600E37724EE48EB63AE8 /* Poppins-Light.ttf */,
+				041B9671448B45B9A351458C /* Poppins-Medium.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -243,6 +267,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D74C14F726204E8EBE92FD86 /* NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf in Resources */,
+				61EB67CE64674DA5B1BCEAF6 /* NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf in Resources */,
+				EA3276B5069047A4930CE7B5 /* Poppins-Bold.ttf in Resources */,
+				CD5BE15D311147D9A3A78F78 /* Poppins-Light.ttf in Resources */,
+				E07F898EB0494104A6D5E273 /* Poppins-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
