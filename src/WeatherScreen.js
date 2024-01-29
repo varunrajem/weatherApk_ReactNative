@@ -9,8 +9,117 @@ const WeatheerScreen = () => {
   const [city, setCity] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
+  const [currentcity, setCurrentCity] = useState()
+  const [refersh, setRefresh] = useState('')
+  // console.log(refersh)
+  // console.log(currentcity)
+  // console.log(city)
 
   const apiKey = 'a421de0ca7d8fe333ce91c982711a4c9';
+
+  const indianCity = ["Mumbai",
+    "Delhi",
+    "Bangalore",
+    "Kolkata",
+    "Chennai",
+    "Hyderabad",
+    "Ahmedabad",
+    "Pune",
+    "Surat",
+    "Jaipur",
+    "Lucknow",
+    "Kanpur",
+    "Nagpur",
+    "Indore",
+    "Thane",
+    "Bhopal",
+    "Visakhapatnam",
+    "Pimpri-Chinchwad",
+    "Patna",
+    "Vadodara",
+    "Ghaziabad",
+    "Ludhiana",
+    "Agra",
+    "Nashik",
+    "Faridabad",
+    "Meerut",
+    "Rajkot",
+    "Kalyan-Dombivli",
+    "Vasai-Virar",
+    "Varanasi",
+    "Srinagar",
+    "Aurangabad",
+    "Dhanbad",
+    "Amritsar",
+    "Navi Mumbai",
+    "Allahabad",
+    "Howrah",
+    "Ranchi",
+    "Gwalior",
+    "Jabalpur",
+    "Coimbatore",
+    "Vijayawada",
+    "Jodhpur",
+    "Madurai",
+    "Raipur",
+    "Kota",
+    "Chandigarh",
+    "Guwahati",
+    "Solapur",
+    "Hubballi-Dharwad",
+    "Bareilly",
+    "Moradabad",
+    "Mysore",
+    "Gurgaon",
+    "Aligarh",
+    "Jalandhar",
+    "Tiruchirappalli",
+    "Bhubaneswar",
+    "Salem",
+    "Mira-Bhayandar",
+    "Warangal",
+    "Thiruvananthapuram",
+    "Bhiwandi",
+    "Saharanpur",
+    "Guntur",
+    "Amravati",
+    "Bikaner",
+    "Noida",
+    "Jamshedpur",
+    "Bhilai",
+    "Cuttack",
+    "Kochi",
+    "Udaipur",
+    "Bhavnagar",
+    "Dehradun",
+    "Asansol",
+    "Nanded",
+    "Ajmer",
+    "Jamnagar",
+    "Ujjain",
+    "Sangli",
+    "Loni",
+    "Jhansi",
+    "Pondicherry",
+    "Nellore",
+    "Jammu",
+    "Belagavi",
+    "Raurkela",
+    "Mangaluru",
+    "Tirunelveli",
+    "Malegaon",
+    "Gaya",
+    "Jalgaon",
+    "Udaipur",
+    "Maheshtala",
+    "Tirupur",
+    "Davanagere",
+    "Kozhikode",
+    "Akola",
+    "Kurnool",
+    "Rajpur Sonarpur",
+    "Bokaro",
+    "South Dumdum",]
 
   const getWeatherData = async () => {
     try {
@@ -18,11 +127,24 @@ const WeatheerScreen = () => {
         `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`
       );
       setWeatherData(response.data);
-      console.log(response.data)
+      setRefresh(city);
+      setCity('')
+      // console.log(response.data)
       setError('');
     } catch (error) {
       setError('City not found');
-      setWeatherData(null);
+    }
+  };
+
+  const refresh = async () => {
+    console.log(refersh)
+    try {
+      const response = await axios.get(
+        `http://api.openweathermap.org/data/2.5/weather?q=${refersh}&appid=${apiKey}&units=metric`
+      );
+      setWeatherData(response.data);
+    } catch (err) {
+      console.log(err)
     }
   };
 
@@ -117,8 +239,26 @@ const WeatheerScreen = () => {
     fewclouds();
   }
 
+  if (weatherData?.weather[0]?.description === 'broken clouds') {
+    fewclouds();
+  }
+
   if (weatherData?.weather[0]?.description === 'fog') {
     fog();
+  }
+  if (weatherData?.weather[0]?.description === 'overcast clouds') {
+    fog();
+  }
+
+  const filtered = (city) => {
+    const filtereddata = []
+    // console.log('apple', city)
+    indianCity.forEach((e) => {
+      if (e.includes(city)) {
+        filtereddata.push(e)
+      }
+    })
+    setCurrentCity(filtereddata)
   }
 
 
@@ -132,22 +272,30 @@ const WeatheerScreen = () => {
               style={styles.input}
               placeholder="Enter city"
               value={city}
-              onChangeText={setCity}
-            />
+              onChangeText={(text) => { setCity(text); filtered(text); setWeatherData(null); }}
+            /><View>{city && currentcity.map((e, i) => {
+              return <Text style={{ backgroundColor: 'gray', borderRadius: 5, margin: 2, textAlign: 'center', paddingHorizontal: 12 }} key={i} onPress={() => { setCity(e); setCurrentCity([]) }}>{e === city ? '' : e}</Text>
+            })}</View>
             <TouchableOpacity style={styles.button} onPress={getWeatherData}>
               <Text tyle={styles.buttontext}>WEATHER REPORT</Text>
             </TouchableOpacity>
-            {weatherData && (
-              <View style={styles.Card}>
-                <Text style={styles.name}>{weatherData.name.toUpperCase()}</Text>
-                <Text style={styles.desc}>{weatherData.weather[0].description.toUpperCase()}</Text>
-                <Text style={styles.temp}>{Math.round(weatherData.main.temp)}°C</Text>
-                <Text style={styles.lat}>LAT   {weatherData.coord.lat}</Text>
-                <Text style={styles.lon}>LOG   {weatherData.coord.lon}</Text>
-              </View>
-            )}
-            {error !== '' && <Text style={styles.errorText}>{error}</Text>}
-          </View>
+            <View>
+              {weatherData && (
+                <View style={styles.Card}>
+
+                  <Text style={styles.name}>{weatherData.name.toUpperCase()}</Text>
+                  <Text style={styles.desc}>{weatherData.weather[0].description.toUpperCase()}</Text>
+                  <Text style={styles.temp}>{Math.round(weatherData.main.temp)}°C</Text>
+                  <Text style={styles.lat}>LAT   {weatherData.coord.lat}</Text>
+                  <Text style={styles.lon}>LOG   {weatherData.coord.lon}</Text>
+                  <TouchableOpacity style={{ backgroundColor: 'blue', padding: 12, borderRadius: 10 }} onPress={refresh}>
+                    <Text tyle={styles.buttontext}>Refresh</Text>
+                  </TouchableOpacity>
+                </View>
+
+              )}
+              {error !== '' && <Text style={styles.errorText}>{error}</Text>}
+            </View></View>
         </ImageBackground>
       </View>
     </>
